@@ -31,13 +31,12 @@ const retryWithBackoff = async (fn, maxRetries = 3, initialDelay = 1000, forceNo
 const apiCall = async (scriptId, action, additionalData = {}) => {
   const noRetry = scriptId === 'admin_tournament_script' && action === 'createEvent';
   const makeRequest = async () => {
-    const proxyAuthToken = await getProxyToken(scriptId, action);  // renamed from token
+    const proxyAuthToken = await getProxyToken(scriptId, action);
     const url = new URL('https://proxy-server-main-b19c53126a4f.herokuapp.com/proxy');
     const response = await fetchWithTimeout(url, {
       method: 'POST',
       headers: { 
-        'Content-Type': 'application/json', 
-        'X-CORS-Bypass-Key': 'df76cdef555f4de0996f0c595937f8b9' 
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
         token: proxyAuthToken,  
@@ -56,8 +55,6 @@ const apiCall = async (scriptId, action, additionalData = {}) => {
 
   return retryWithBackoff(makeRequest, 5, 2000, noRetry);
 };
-
-
 
 const fetchWithTimeout = async (url, options, timeout = 120000) => {
   const controller = new AbortController();
@@ -83,14 +80,13 @@ const getProxyToken = async (scriptId, action) => {
     const response = await fetchWithTimeout(url, {
       method: 'POST',
       headers: { 
-        'Content-Type': 'application/json',
-        'X-CORS-Bypass-Key': 'df76cdef555f4de0996f0c595937f8b9'
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({ 
         script_id: scriptId, 
         action: action,
       })
-    }, 60000); // 60 seconds for token request
+    }, 60000);
 
     if (!response.ok) {
       const errorText = await response.text();
@@ -104,7 +100,5 @@ const getProxyToken = async (scriptId, action) => {
 
   return retryWithBackoff(makeRequest);
 };
-
-
 
 export default apiCall;
