@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/isa-form/static/css/main.95dc17a7.css",
+    "main.js": "/isa-form/static/js/main.63b3b417.js",
+    "static/js/488.7fa633ac.chunk.js": "/isa-form/static/js/488.7fa633ac.chunk.js",
+    "index.html": "/isa-form/index.html",
+    "main.95dc17a7.css.map": "/isa-form/static/css/main.95dc17a7.css.map",
+    "main.63b3b417.js.map": "/isa-form/static/js/main.63b3b417.js.map",
+    "488.7fa633ac.chunk.js.map": "/isa-form/static/js/488.7fa633ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.95dc17a7.css",
+    "static/js/main.63b3b417.js"
+  ]
+}
