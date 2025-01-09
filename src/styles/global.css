@@ -1,0 +1,19 @@
+:root {
+    --page-background: #121212;     /* Darker background for the page */
+    --component-background: #1e1e1e; /* Slightly lighter than page for components */
+    --text-primary: #ffffff;        /* White text for primary content */
+    --text-secondary: #b3b3b3;      /* Light gray for secondary content */
+    --primary-color: #6b9fff;       /* Kept the same blue for primary actions */
+    --danger-color: #ff5555;        /* Kept the same red for errors */
+    --success-color: #4caf50;       /* Adjusted green for better visibility */
+    --border-color: #333333;        /* Dark gray for borders */
+    --hover-overlay: rgba(255, 255, 255, 0.1); /* Subtle white overlay for hover states */
+  }
+  
+  body {
+    background-color: var(--page-background);
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    color: var(--text-primary);
+  }
