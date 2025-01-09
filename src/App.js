@@ -11,7 +11,7 @@ import './styles/global.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/isa-form">
       <div className="App">
         <Routes>
           <Route path="/" element={<FormsList />} />
